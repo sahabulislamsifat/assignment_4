@@ -16,6 +16,7 @@ function calculateTax(income, expense) {
 }
 
 
+
 function sendNotification(email) {
   if (email.indexOf("@") === -1) {
     return "Invalid Email";
@@ -25,6 +26,8 @@ function sendNotification(email) {
   const result = `${username} sent you an email from ${domain}`;
   return result;
 }
+
+
 
 function checkDigitsInName(name) {
   if (typeof name !== "string") {
@@ -40,8 +43,39 @@ function checkDigitsInName(name) {
 }
 
 
-// 4 no problem 
 
+function calculateFinalScore(obj) {
+  if (
+    typeof obj !== "object" ||
+    obj === null ||
+    !("name" in obj) ||
+    !("testScore" in obj) ||
+    !("schoolGrade" in obj) ||
+    !("isFFamily" in obj)
+  ) {
+    return "invalid Input";
+  }
+
+  const { name, testScore, schoolGrade, isFFamily } = obj;
+
+  if (
+    typeof name !== "string" ||
+    typeof testScore !== "number" ||
+    typeof schoolGrade !== "number" ||
+    typeof isFFamily !== "boolean"
+  ) {
+    return "Invalid Input";
+  }
+
+  if (testScore <= 0 || testScore > 50 || schoolGrade < 0 || schoolGrade > 30) {
+    return "invalid Input";
+  }
+  let finalScore = testScore + schoolGrade;
+  if (isFFamily) {
+    finalScore += 20;
+  }
+  return finalScore >= 80;
+}
 
 
 
