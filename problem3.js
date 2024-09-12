@@ -11,5 +11,5 @@ function checkDigitsInName(name) {
   return false;
 }
 
-const check = checkDigitsInName("raj123");
+const check = checkDigitsInName("sifat2024");
 console.log(check);
