@@ -1,15 +1,30 @@
+// function checkDigitsInName(name) {
+//   if (typeof name !== "string") {
+//     return "Invalid Input";
+//   }
+
+//   for (let i = 0; i < name.length; i++) {
+//     if (name[i] >= "0" && name[i] <= "9") {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// const check = checkDigitsInName("sifat2024");
+// console.log(check);
+
 function checkDigitsInName(name) {
   if (typeof name !== "string") {
     return "Invalid Input";
   }
 
   for (let i = 0; i < name.length; i++) {
-    if (name[i] >= "0" && name[i] <= "9") {
+    if (!isNaN(name[i])) {
       return true;
     }
   }
   return false;
 }
 
-const check = checkDigitsInName("sifat2024");
+const check = checkDigitsInName("sjhdishds");
 console.log(check);

@@ -30,6 +30,7 @@ function calculateFinalScore(obj) {
   }
   return finalScore >= 80;
 }
+
 // console.log(
 //   calculateFinalScore({
 //     name: "Rajib",
@@ -58,3 +59,14 @@ function calculateFinalScore(obj) {
 //     isFFamily: true,
 //   })
 // );
+
+function calculateFinalScore(data) {
+  if (typeof data !== "object") {
+    return "Invalid Input";
+  }
+  const familyScore = data.isFFamily ? 20 : 0;
+
+  const totalScore = data.testScore + data.schoolGrade + familyScore;
+
+  return  totalScore >= 80;;
+}
